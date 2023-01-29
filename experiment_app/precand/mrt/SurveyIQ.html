@@ -1,0 +1,152 @@
+{{ block title }}
+    Section 4
+{{ endblock }}
+{{ block content }}
+
+<p>The test you have taken in Section 1 is a version of IQ test
+    developed by Civelli and Deck (2018). It is similar to Raven's Progressive Matrices,
+    a non-verbal test used to measure general human intelligence
+    and abstract reasoning, which is one of the most common tests
+    administered to individuals
+    ranging from 5-year-olds to the elderly. [Source: Wikipedia]</p>
+
+    {{ formfield "surveyIQ1" }}
+
+<label class="col-form-label" for="id_surveyIQ2">
+    2. On a scale of 1 (very low) to 7 (very high),
+    how would you rate the importance of your performance
+    on the quiz for your <b>academic success</b>?
+</label>
+<center>
+    <table width="80%">
+        <tr>
+            <td colspan="7">
+                <div class="range-container">
+                    <input type="range" class="form-range default" id="id_surveyIQ2" max="7" min="1" step="1" name="surveyIQ2" data-value="" required>
+                    <div class="range_text"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="slider1" width="29%">1<br>Very low</td>
+            <td width="14%"></td>
+            <td width="14%">4</td>
+            <td width="14%"></td>
+            <td class="slider7" width="29%">7<br>Very high</td>
+        </tr>
+    </table>
+</center>
+<br>
+<label class="col-form-label" for="id_surveyIQ3">
+    3. On a scale of 1 (very low) to 7 (very high),
+    how would you rate the importance of your performance
+    on the quiz for your <b>professional success</b>?
+</label>
+<center>
+    <table width="80%">
+        <tr>
+            <td colspan="7">
+                <div class="range-container">
+                    <input type="range" class="form-range default" id="id_surveyIQ3" max="7" min="1" step="1" name="surveyIQ3" data-value="" required>
+                    <div class="range_text"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="slider1" width="29%">1<br>Very low</td>
+            <td width="14%"></td>
+            <td width="14%">4</td>
+            <td width="14%"></td>
+            <td class="slider7" width="29%">7<br>Very high</td>
+        </tr>
+    </table>
+</center>
+
+<br><br>
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+    var slider1 = document.getElementById("id_surveyIQ2");
+    const text1 = slider1.nextElementSibling;
+    text1.style.left = 49 + "%";
+    text1.style.display = "flex";
+    text1.innerHTML = 4;
+
+    slider1.onclick = function() {
+        text1.style.left = (this.value-1)/6*100 - 1 + "%";
+        text1.innerHTML = this.value;
+    };
+
+    var slider2 = document.getElementById("id_surveyIQ3");
+    const text2 = slider2.nextElementSibling;
+    text2.style.left = 49 + "%";
+    text2.style.display = "flex";
+    text2.innerHTML = 4;
+
+    slider2.onclick = function() {
+        text2.style.left = (this.value-1)/6*100 - 1 + "%";
+        text2.innerHTML = this.value;
+    };
+</script>
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+        .col-form-label {
+            font-weight: 500;
+        }
+        td {
+            text-align:center;
+        }
+        td.slider1 {
+            text-align: left;
+        }
+        td.slider7 {
+            text-align: right;
+        }
+        .form-range::-webkit-slider-thumb {
+            height: 0px;
+            width: 0px;
+            -webkit-appearance: none;
+        }
+        .form-range::-moz-range-thumb {
+            height: 0px;
+            width: 0px;
+        }
+        .form-range::-ms-thumb {
+            height: 0px;
+            width: 0px;
+        }
+        .range-container {
+            position: relative;
+            display: flex;
+            padding: 0;
+        }
+        .form-range {
+            appearance: none;
+            padding: 0;
+            width: 100%;
+        }
+        .range_text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 122, 254, 0.3);
+            text-align: center;
+            line-height: 1;
+            height: 20px;
+            width: 20px;
+            transform: translate(0, 0);
+            border-radius: 50%;
+        }
+    </style>
+{{ endblock }}

@@ -1,0 +1,42 @@
+{{ block title }}
+Section 1
+{{ endblock }}
+{{ block content }}
+<br>
+<div class="container">
+    <div class="content">
+        <h1 class="section_title">Section 1</h1>
+        <br><br>
+        <p>You will now begin Section 1.</p><p>Please click Next to proceed.</p>
+        <br><br>
+        {{ next_button }}
+    </div>
+
+</div>
+<br>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    div.container {
+        height: 30em;
+        position: relative;
+        }
+    .content {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+    .otree-btn-next {
+        width: 50%;
+    }
+    #_otree-title {
+        display: none;
+    }
+    </style>
+{{ endblock }}

@@ -1,0 +1,47 @@
+{{ block title }}
+    Practice question
+{{ endblock }}
+{{ block content }}
+
+<table class="table">
+    <tr>
+        <td valign="middle"><img src="{{ static 'mrt/Warmup_question.png' }}" width="100%"></td>
+        <td valign="middle"><img src="{{ static 'mrt/Warmup_answer.png' }}" width="100%"></td>
+    </tr>
+</table>
+
+    <p>
+        {% if player.q_warm_up > 0 %}
+            {% if player.q_warm_up == 1 %}
+            Your answer <b>A</b> was incorrect. The correct answer is <b>B</b>. Please review this question. <br>When you are ready to proceed to the task (which will ask you more of these questions), click Next.
+            {% elif player.q_warm_up == 2 %}
+            Your answer <b>B</b> was correct. <br>When you are ready to proceed to the task (which will ask you more of these questions), click Next.
+            {% elif player.q_warm_up == 3 %}
+            Your answer <b>C</b> was incorrect. The correct answer is <b>B</b>. Please review this question. <br>When you are ready to proceed to the task (which will ask you more of these questions), click Next.
+            {% elif player.q_warm_up == 4 %}
+            Your answer <b>D</b> was incorrect. The correct answer is <b>B</b>. Please review this question. <br>When you are ready to proceed to the task (which will ask you more of these questions), click Next.
+            {% endif %}
+        {% else %}
+            The correct answer is <b>B</b>. Please review this question. <br>When you are ready to proceed to the task (which will ask you more of these questions), click Next.
+        {% endif %}
+    </p>
+
+
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            font-size: 1.325rem;
+        }
+        body {
+            text-align: center;
+        }
+        img {
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+{{ endblock }}

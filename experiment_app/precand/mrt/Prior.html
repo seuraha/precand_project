@@ -1,0 +1,69 @@
+{{ block title }}
+    Section 2
+{{ endblock }}
+{{ block content }}
+
+<p><b>What are the percentage chances that you scored 1st, 2nd, 3rd, and 4th on the IQ test?</b></p>
+<p>
+    (Remember that the total must add up to 100%.
+    You may put any number between 0-100 in the boxes.)
+</p>
+
+<br>
+<br>
+<div style="text-align: center;">
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_prior_1">Rank 1:</label>
+                <input type="number" class="form-control persist" id="id_prior_1" max="100" min="0" name="prior_1" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+
+            <div class="controls">
+                <label class="col-form-label" for="id_prior_2">Rank 2:</label>
+                <input type="number" class="form-control persist" id="id_prior_2" max="100" min="0" name="prior_2" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_prior_3">Rank 3:</label>
+                <input type="number" class="form-control persist" id="id_prior_3" max="100" min="0" name="prior_3" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_prior_4">Rank 4:</label>
+                <input type="number" class="form-control persist" id="id_prior_4" max="100" min="0" name="prior_4" required="" value="">
+                %
+            </div>
+    </div>
+</div>
+<br>
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block scripts }}
+    <script src="{{ static 'persist-raw.js' }}"></script>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    .form-control {
+        width: 120px;
+        display:inline-block;
+    }
+    #_otree-title {
+        visibility: hidden;
+    }
+    body {
+        text-align: center;
+    }
+</style>
+
+{{ endblock }}

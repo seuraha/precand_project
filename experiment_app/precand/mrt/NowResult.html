@@ -1,0 +1,45 @@
+{{ block title }}
+    Results
+{{ endblock }}
+{{ block content }}
+
+<br>
+<div class="container">
+    <div class="content">
+        <h1 class="section_title">Results</h1>
+        <br><br>
+        <p>You were ranked {{ rank_ordinal }} among your group of 4 people
+            in the IQ test.</p>
+
+        <p>Please click the next button.</p>
+        <br><br>
+        {{ next_button }}
+    </div>
+</div>
+<br>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    div.container {
+        height: 30em;
+        position: relative;
+        }
+    .content {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+    .otree-btn-next {
+        width: 50%;
+    }
+    #_otree-title {
+        display: none;
+    }
+    </style>
+{{ endblock }}

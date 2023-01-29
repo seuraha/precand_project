@@ -1,0 +1,34 @@
+{{ block title }}
+    Section 4
+{{ endblock }}
+{{ block content }}
+
+
+<p>Which would you prefer?</p>
+<ul>
+    <li>
+        <span class="statement">a 50/50 chance of getting $450 or getting nothing</span>
+        <br><b>or</b>
+    </li>
+    <li>
+        <span class="statement">an amount of $90 as a sure payment</span>
+    </li>
+</ul>
+
+{{ formfields }}
+<br>
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+        .statement {
+            color: blue;
+            font-weight: 500;
+        }
+    </style>
+{{ endblock }}

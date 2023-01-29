@@ -1,0 +1,51 @@
+{{ block title }}
+    Section 2
+{{ endblock }}
+{{ block content }}
+
+<p>The test you have just taken is an <b>intelligence test (IQ test)</b>.
+    All participants have seen exactly the same questions, and in the same order.</p>
+<p>The computer has randomly assigned you to a group of 4 with other U-M students,
+    and your score on the IQ test has been evaluated relative
+    to the participants in that group.</p>
+<p>In a little bit, we will ask you to estimate the percentage chances
+    that you have been ranked 1st, 2nd, 3rd, and 4th in your group. The question will look as follows:
+</p>
+<figure>
+    <img src="{{ static 'mrt/estimation_.png'}}" width="80%">
+
+</figure>
+<br><br>
+<p>You will have the opportunity to win 1 dollar using the same payoff mechanism
+    that we explained at the beginning of the experiment (please consult the leaflet if you need to).
+    This means that you maximize your payoff when you give your best estimate.</p>
+<p>If the case occurs that two participants in the group have the same score, the computer randomly decides which participant has the higher or the lower rank.</p>
+
+<br>
+<p>Before you proceed to the next page,
+    please answer the following comprehension quiz. This quiz is not counted in the final payoff.</p>
+
+{{ formfields }}
+<br>
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+        .col-form-label {
+            font-weight: 500;
+        }
+        figure {
+            display: block;
+            text-align: center;
+        }
+        img {
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+{{ endblock }}

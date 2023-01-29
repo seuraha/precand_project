@@ -1,0 +1,68 @@
+{{ block title }}
+    Section 3
+{{ endblock }}
+{{ block content }}
+
+<p>Now, you will be paired <b>once</b> with a randomly selected person
+    from your group and will be told whether your rank is higher or lower
+    than this person. The assignment is completely anonymous,
+    and you will never know the identity of the selected comparison person.</p>
+<p>Afterwards, you have another possibility to give your estimation
+    with which percentage chance you have been ranked 1st, 2nd, 3rd, and 4th.
+    You will have the chance to win 1 dollar using the same payoff mechanism that
+    we explained at the beginning of the experiment. This means that you maximize your payoff
+    when you give your best estimate.
+</p>
+
+{% if player.treatment == "now" %}
+<p><b>At the end of the experiment today, you will be informed about your actual rank in the group.</b></p>
+{% elif player.treatment == "10" %}
+<p><b>At the time we contact you again in 10 days from now, you will be informed about your actual rank in the group, but you will not receive any further information about your performance until then.</b></p>
+{% else %}
+<p><b>In the course of the experiment, you will not receive any further information about your performance and you will never learn your actual rank in the group.</b></p>
+{% endif %}
+
+<br>
+<p>Before you proceed to Section 3, please answer the following comprehension quiz.
+    This quiz is not counted in the final payoff.</p>
+
+{{ formfield "posterior_comp1" }}
+
+<p>
+    <span class="weight500">
+        2.
+        {% if player.treatment == "now" %}
+        [True or False] You will learn your actual rank <b>today</b>.
+        {% elif player.treatment == "10" %}
+        [True or False] You will learn your actual rank <b>10 days later</b>
+        but will not receive any further information until then.
+        {% else %}
+        [True or False] You will <b>never</b> learn your actual rank in the group.
+        {% endif %}
+    </span>
+</p>
+
+{{ formfield "posterior_comp2" }}
+
+<br>
+    {{ next_button }}
+
+{{ endblock }}
+
+
+{{ block styles }}
+<style>
+    label[for="id_posterior_comp2"] {
+        display: none;
+    }
+    #_otree-title {
+        visibility: hidden;
+    }
+    .col-form-label {
+        font-weight: 500;
+    }
+    .weight500 {
+        font-weight: 500;
+    }
+</style>
+{{ endblock }}

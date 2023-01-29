@@ -1,0 +1,79 @@
+{{ block title }}
+    Section 3
+{{ endblock }}
+{{ block content }}
+
+<p><b>Now, you have another opportunity to give your estimate
+    with which percentage chances
+    you have scored on rank 1, rank 2, rank 3, and rank 4.</b></p>
+{% if player.treatment == "now" %}
+<p><b>
+    At the end of the experiment today,
+    you will be informed about your actual rank in the group.</b></p>
+{% elif player.treatment == "10" %}
+<p><b>
+    At the time we contact you again in 10 days from now,
+    you will be informed about your actual rank in the group,
+    but you will not receive any further information about your performance until then.
+</b></p>
+{% else %}
+<p><b>However,
+    you will never learn your actual rank in the group.</b></p>
+{% endif %}
+
+<p>What are the percentage chances that you scored 1st, 2nd, 3rd, and 4th on the IQ test?</p>
+
+<div style="text-align: center;">
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_posterior_1">Rank 1:</label>
+                <input type="number" class="form-control persist" id="id_posterior_1" max="100" min="0" name="posterior_1" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_posterior_2">Rank 2:</label>
+                <input type="number" class="form-control persist" id="id_posterior_2" max="100" min="0" name="posterior_2" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_posterior_3">Rank 3:</label>
+                <input type="number" class="form-control persist" id="id_posterior_3" max="100" min="0" name="posterior_3" required="" value="">
+                %
+            </div>
+    </div>
+    <div class="mb-3 _formfield">
+            <div class="controls">
+                <label class="col-form-label" for="id_posterior_4">Rank 4:</label>
+                <input type="number" class="form-control persist" id="id_posterior_4" max="100" min="0" name="posterior_4" required="" value="">
+                %
+            </div>
+    </div>
+</div>
+<br>
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block scripts }}
+    <script src="{{ static 'persist-raw.js' }}"></script>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    .form-control {
+        width: 120px;
+        display:inline-block;
+    }
+    #_otree-title {
+        visibility: hidden;
+    }
+    body {
+        text-align: center;
+    }
+</style>
+
+{{ endblock }}

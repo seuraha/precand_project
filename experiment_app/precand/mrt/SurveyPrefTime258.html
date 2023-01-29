@@ -1,0 +1,30 @@
+{{ block title }}
+    Section 4
+{{ endblock }}
+{{ block content }}
+
+
+<p>Which would you rather receive?</p>
+<ul>
+    <li><span class="statement">$160 today</span>
+        <br><b>or</b></li>
+    <li><span class="statement">$258 in 12 months</span></p></li>
+</ul>
+
+{{ formfields }}
+<br>
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+        .statement {
+            color: blue;
+            font-weight: 500;
+        }
+    </style>
+{{ endblock }}

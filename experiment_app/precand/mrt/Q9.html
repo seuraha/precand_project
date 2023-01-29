@@ -1,0 +1,40 @@
+{{ block title }}
+    Pattern 9/15
+{{ endblock }}
+{{ block content }}
+
+<table class="table">
+    <tr>
+        <td valign="middle"><img src="{{ static 'mrt/Quiz_4_4_9_question.png' }}" width="100%"></td>
+        <td valign="middle"><img src="{{ static 'mrt/Quiz_4_4_9_answer.png' }}" width="100%"></td>
+    </tr>
+</table>
+
+<div class="mb-3 _formfield">
+        <label class="col-form-label">Which cutout is the right completion?</label>
+        <div class="controls">
+            <button class="btn btn-outline-primary" name="q9" value="1">A</button>
+            <button class="btn btn-outline-primary" name="q9" value="2">B</button>
+            <button class="btn btn-outline-primary" name="q9" value="3">C</button>
+            <button class="btn btn-outline-primary" name="q9" value="4">D</button>
+        </div>
+</div>
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            font-size: 1.325rem;
+        }
+        .btn-outline-primary {
+            width: 20%;
+        }
+        body {
+            text-align: center;
+        }
+        img {
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+{{ endblock }}

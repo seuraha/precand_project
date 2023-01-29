@@ -1,0 +1,30 @@
+{{ block title }}
+    Section 1: Quiz
+{{ endblock }}
+{{ block content }}
+
+<p>In the first section of the experiment, we ask you to complete a quiz with 15 questions.</p>
+
+<p>You will see a pattern with one cutout missing.
+    Your task is to choose the correct cutout from four suggestions and press the Next button.</p>
+<p>You have 30 seconds to select the correct answer for each pattern and click the Next button.</p>
+<p>
+    The additional payment for each correct question is ${{ C.PIECE_RATE|to2 }}.
+    Additionally, the computer will draw a random prize between $0.00 and $1.00 and add it to the payment.
+    For example, suppose that you got 5 out of the 15 questions correct, and the computer drew a random prize of $0.50.
+    Then, the additional payment from this section is ${{ C.PIECE_RATE|to2 }} X 5 + $0.50 = $1.50.
+</p>
+<p>On the following page, you can answer a practice question to familiarize yourself with the format of the quiz.</p>
+<br>
+
+{{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+    </style>
+{{ endblock }}

@@ -1,0 +1,116 @@
+{{ block title }}
+    Section 4
+{{ endblock }}
+{{ block content }}
+
+
+<p>How well does the following statement describe you as a person? </p>
+<span class="statement"><p>"I tend to postpone tasks even if I know it would be better to do them right away."</p></span>
+<br>
+<p>Please indicate your answer on a scale from 0 to 10. A 0 means “does not describe me at all,” and a 10 means “describes me perfectly.” You can use any number between 0 and 10 to indicate where you fall on the scale, using 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10.</p>
+<br>
+    <center>
+    <table width="80%">
+        <tr>
+            <td colspan="11">
+                <div class="range-container">
+                    <input type="range" class="form-range default" id="id_time_pref_qual1" max="10" min="0" step="1" name="time_pref_qual1" data-value="" required>
+                    <div class="range_text"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="slider0" width="27%">0<br>Does not describe me at all</td>
+            <td width="9%"></td>
+            <td width="9%"></td>
+            <td width="9%">5</td>
+            <td width="9%"></td>
+            <td width="9%"></td>
+            <td id="slider10" width="27%">10<br>Describes me perfectly</td>
+        </tr>
+    </table>
+    </center>
+<br>
+<br>
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+    var slider = document.getElementById("id_time_pref_qual1");
+    const text = slider.nextElementSibling;
+    text.style.left = 49 + "%";
+    text.style.display = "flex";
+    text.innerHTML = 5;
+
+    slider.onclick = function() {
+        text.style.left = (this.value) * 10 - 1 + "%";
+        text.innerHTML = this.value;
+    };
+</script>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    label[for="id_time_pref_qual1"] {
+        display: none;
+    }
+    td {
+        text-align:center;
+    }
+    td#slider0 {
+        text-align: left;
+    }
+    td#slider10 {
+        text-align: right;
+    }
+    .form-range::-webkit-slider-thumb {
+        height: 0px;
+        width: 0px;
+        -webkit-appearance: none;
+    }
+    .form-range::-moz-range-thumb {
+        height: 0px;
+        width: 0px;
+    }
+    .form-range::-ms-thumb {
+        height: 0px;
+        width: 0px;
+    }
+    .range-container {
+        position: relative;
+        display: flex;
+        padding: 0;
+    }
+    .form-range {
+        appearance: none;
+        padding: 0;
+        width: 100%;
+    }
+    .range_text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0, 122, 254, 0.3);
+        text-align: center;
+        line-height: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(0, 0);
+        border-radius: 50%;
+    }
+    .statement {
+        text-align: center;
+        color: blue;
+        font-weight: 500;
+    }
+    #_otree-title {
+        visibility: hidden;
+    }
+</style>
+{{ endblock }}

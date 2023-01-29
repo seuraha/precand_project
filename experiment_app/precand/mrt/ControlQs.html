@@ -1,0 +1,36 @@
+{{ block title }}
+    Practice questions
+{{ endblock }}
+{{ block content }}
+
+    <p>The following practice questions relate to the exemplary event "the number of rainy days in Ann Arbor in September 2021" with the following four scenarios:</p>
+<ul>
+    <li>Scenario A: In September 2021, Ann Arbor had less than 7 rainy days.</li>
+    <li>Scenario B: In September 2021, Ann Arbor had between 7 and 9 rainy days.</li>
+    <li>Scenario C: In September 2021, Ann Arbor had between 10 and 11 rainy days.</li>
+    <li>Scenario D: In September 2021, Ann Arbor had at least 12 rainy days.</li>
+</ul>
+<br>
+<p>Assume that your best estimate for the percentage chances of Scenario <i>A</i> is 50%, Scenario <i>B</i> is 30%, and Scenario <i>C</i> is 15%.</p>
+
+    {{ formfield "belief_comp1" }}
+<br>
+<p>Suppose that you reported your best estimates and the computer has randomly selected
+    Scenario <i>C</i> (for which you estimated a 15% chance of occurring)
+    and randomly picked <i>X</i> to be 25.</p>
+
+{{ formfield "belief_comp2" }}
+{{ formfield "belief_comp3" }}
+<br>
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        .col-form-label {
+            font-weight: 500;
+        }
+    </style>
+{{ endblock }}

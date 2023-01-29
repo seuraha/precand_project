@@ -1,0 +1,39 @@
+{{ block title }}
+    Welcome!
+{{ endblock }}
+{{ block content }}
+
+<audio src="{{ static 'mrt/general_inst.m4a'}}" type="audio/x-m4a" controls autoplay >
+</audio>
+<br>
+<br>
+<p>The experiment consists of four sections.
+    In each section, you will first read the instructions and perform different tasks.
+    Your payment will be determined by your decisions,
+    so please read the instructions very carefully.</p>
+
+<p>Please make sure that your mobile phone is switched off.
+    During the experiment, it is not allowed to communicate with other participants,
+    use mobile phones, or start other programs on the computer.
+    If you violate this rule, we must exclude you from the experiment and all payments.</p>
+
+<p>If you have any questions at any point during the experiment,
+    please raise your hand. An experimenter will come to your station
+    and answer your questions quietly.</p>
+<br>
+
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+    var next_button = document.getElementsByClassName('otree-btn-next btn btn-primary')[0]
+    next_button.disabled = true;
+    window.setTimeout(button_enable, 30000);
+
+    function button_enable() {
+        next_button.disabled = false;
+    }
+</script>
+{{ endblock }}

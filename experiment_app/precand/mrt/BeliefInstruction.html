@@ -1,0 +1,127 @@
+{{ block title }}
+    Estimation Instruction
+{{ endblock }}
+{{ block content }}
+
+
+<audio src="{{ static 'mrt/2-1.m4a'}}" type="audio/x-m4a" controls autoplay >
+</audio>
+<br>
+<br>
+<p>
+    During the experiment, you will give your estimates for the percentage chances
+    of <b>four different scenarios of an event.</b>
+    The percentage chance that you will report will influence your earnings.
+    For each estimate task, you can receive an additional payoff of 1 dollar.
+    The payoff mechanism is designed such that you have the highest chance
+    of receiving an additional payoff of 1 dollar when you report your best estimate.
+</p>
+<p>
+    In the following, we will explain the payoff mechanism in detail.
+    We will use the event <b>“the number of rainy days in Ann Arbor in September 2021”</b>
+    as an example. This example is for <b>illustrative purposes</b> only
+    and will be replaced by another event in the experiment.
+</p>
+<p>
+    Assume in the following that there are four possible scenarios
+    for the “number of rainy days in Ann Arbor in September 2021,”
+    and that exactly one of the scenarios has occurred.
+</p>
+<ul>
+    <li><u>Scenario A</u>: In September 2021, Ann Arbor had less than 7 rainy days.</li>
+    <li><u>Scenario B</u>: In September 2021, Ann Arbor had between 7 and 9 rainy days.</li>
+    <li><u>Scenario C</u>: In September 2021, Ann Arbor had between 10 and 11 rainy days.</li>
+    <li><u>Scenario D</u>: In September 2021, Ann Arbor had at least 12 rainy days.</li>
+</ul>
+<p>
+    In the experiment, we would ask you to give your estimate
+    for the chance of the occurrence of each respective scenario.
+    Since only one of these scenarios has occurred,
+    the sum of the probabilities would need to add up to 100%.
+</p>
+<p>
+    After you have made your estimate for the different scenarios,
+    the computer will randomly select exactly <b>one scenario</b> as payoff relevant.
+    This selection is random and does not mean that this scenario occurred.
+</p>
+
+<p>
+    The computer then randomly selects <b>a number X between 0 and 100.</b>
+    The percentage chance to be selected is equal for each number.
+</p>
+<br>
+<br>
+<h3>Payoff</h3>
+<audio src="{{ static 'mrt/2-2.m4a'}}" type="audio/x-m4a" controls >
+</audio>
+<br>
+<br>
+<ul>
+    <li>If your specified percentage chance for the selected scenario is
+        at least as high as the number X,
+        then you will receive a dollar if the scenario has occurred.</li>
+    <li>If, on the other hand, your specified percentage chance
+    is lower than the number X, then you receive a dollar with a chance of X%.</li>
+</ul>
+<p>
+    <b>According to these rules, it is always beneficial for
+        you to report your best estimates.
+    </b>
+</p>
+<p>
+    For example, assume that your best estimate for the percentage chance
+    of scenario A is 50% and you specify a chance of 30%.
+    Then it can happen that the computer selects scenario A
+    for the payout and the number 40 is taken for X.
+    In this case, your chance of winning one dollar is 40%. If you had entered 50%,
+    you would, according to your best estimate,
+    win the one dollar with a percentage chance of 50% -
+    exactly when scenario A occurred.
+</p>
+<br>
+<br>
+<h3>
+    Practice questions
+</h3>
+<br>
+<audio src="{{ static 'mrt/2-3.m4a'}}" type="audio/x-m4a" controls >
+</audio>
+<br>
+<br>
+<p>
+    In order to increase your understanding of the payoff mechanism,
+    we now ask you to answer some practice questions on the next page.
+    We will use the example above,
+    “the number of rainy days in Ann Arbor in September 2021.”
+    Your answers to these questions will not affect your payouts in the experiment.
+    However, we will not proceed to the next phase of the experiment
+    until all participants have answered the questions correctly.
+    You may consult the leaflet we provided during the experiment.
+</p>
+<p>Please click the next page to proceed.</p>
+<br>
+    {{ next_button }}
+<br><span id="ButtonDisabled" style="color:gray;">The Next button is disabled for 3 minute.</span>
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+    var next_button = document.getElementsByClassName('otree-btn-next btn btn-primary')[0]
+    next_button.disabled = true;
+    window.setTimeout(button_enable, 180000);
+
+    function button_enable() {
+        next_button.disabled = false;
+    }
+</script>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    #_otree-title {
+        visibility: hidden;
+    }
+</style>
+
+{{ endblock }}

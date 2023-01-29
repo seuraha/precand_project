@@ -1,0 +1,32 @@
+{{ block title }}
+    Section 3
+{{ endblock }}
+{{ block content }}
+<br>
+<p>
+    The computer has randomly selected another participant in your group.
+</p>
+<p>
+    Your score on the IQ test was
+{% if player.goodnews == 1 %}
+    <b>higher.</b>
+{% else %}
+    <b>lower.</b>
+{% endif %}
+</p>
+<br>
+<br>
+    {{ next_button }}
+
+{{ endblock }}
+
+{{ block styles }}
+    <style>
+        #_otree-title {
+            visibility: hidden;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+{{ endblock }}
